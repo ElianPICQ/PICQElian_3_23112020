@@ -1,0 +1,307 @@
+/* Feuille de Style CSS */
+/* OpenClassrooms projet 3 */
+/* Design mobile first */
+
+/* Page "La palette du goût" */
+
+
+
+@font-face {
+	font-family: "Shrikhand";						/* Police logo + titres */
+	src: url(Shrikhand-Regular.ttf);
+}
+
+@font-face {
+	font-family: "Roboto";							/* Police textes */					
+	src: url(Roboto-Regular.ttf);
+}
+
+/* Comportements par défaut */
+
+body {
+	margin: 0;
+
+	font-family: "Roboto", Arial, sans-serif;
+}
+
+a:link {
+	text-decoration: none;
+	color: #000;
+}
+
+a {
+	color: #000;
+}
+
+li {
+	list-style-type: none;
+}
+
+/* Header de la page (bouton retour + logo) */
+
+#main_header {
+	display: flex;
+	align-items: center;
+
+	height: 3rem;
+}
+
+.back_button {
+	margin-left: 1.5rem;
+}
+
+#logo {
+	margin: 0 auto;
+
+	font-family: "Shrikhand", cursive, sans-serif;
+	font-size: .9rem;
+}
+
+/* Image d'entête */
+
+/*#img_header {
+	width: 100%;
+}*/
+
+#img {
+	background-image: url('images/jay-wennington-N_Y88TWmGwA-unsplash.jpg');
+	background-size: cover;
+	height: 12rem;
+}
+
+/* Main contenant tous les menus */
+
+main {
+	background-color: #F6F6F6;
+	border-radius: 25px 25px 0 0;
+
+	margin-top: -1.5rem;
+	padding-bottom: 4rem;
+}
+
+/* Header du menu */
+
+#menu_header {
+	display: flex;
+	justify-content: space-around;
+	text-align: center;
+}
+
+#menu_header h2 {
+	font-family: "Shrikhand", cursive, sans-serif;
+	font-weight: 400;
+}
+
+#menu_header span {
+	display: flex;
+	align-items: center;
+}
+
+#menu_header i {
+	display: block;
+	font-size: 1.5rem;
+}
+
+/* Menus des restaurants */
+
+.menu {
+	margin-bottom: 2.5rem;
+}
+
+.menu  h3 {
+	font-size: 1rem;
+	font-weight: 100;
+	color: #4B4B4B;					/* Gris foncé */
+
+	margin-left: 5%;
+	padding-bottom: .2rem;
+
+	width: 2.5rem;
+	overflow: visible;
+	border-bottom: 2px solid #99E2D0;
+}
+
+.desc_menu {
+	display: flex;
+	justify-content: space-between;
+	align-items: flex-end;
+
+	overflow-x: hidden;
+
+	height: 3rem;
+	width: 90%;
+	margin: 0 auto .8rem auto;
+
+	border-radius: 10px;
+	box-shadow: 0px 2px 8px grey;
+
+	animation-name: anim_menu;
+	animation-duration: 1000ms;
+	animation-iteration-count: 1;
+
+	transform: translateY(10px);
+	opacity: 0;
+
+	animation-fill-mode: forwards;
+}
+.plat {
+	padding-bottom: .4rem;
+
+	width: 80%;
+	transition: width 1000ms;
+}
+
+.menu h4 {
+	margin: 0;
+	font-size: .95rem;
+
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+
+.menu p {
+	margin: 0;
+	font-size: .85rem;
+
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+
+.prix {
+	padding-bottom: .4rem;
+	margin-right: .5rem;
+
+	font-weight: 600;
+	color: #454545;
+
+	width: 20%;
+}
+
+.carre_coche {
+	width: 0%;
+	background-color: #99E2D0;
+	transition: width 1000ms;
+
+	/*transform: translateX(20%);*/
+/*	transform: scale(0%);
+	transition: all 1000ms cubic-bezier(.97,0,.47,.97);*/
+}
+
+.coche {
+}
+
+.desc_menu:hover .plat {
+	width: 60%;
+	transition: width 1000ms;
+}
+
+.desc_menu:hover .carre_coche {
+	width: 20%;
+	transition: width 1000ms;
+}
+
+@keyframes anim_menu {
+	0% {
+		transform: translateY(10px);
+		opacity: 0;
+	}
+
+	100% {
+		transform: translateY(0);
+		opacity: 1;
+	}
+}
+
+#menu1 .desc_menu:nth-child(2) {
+	animation-delay: 1000ms;
+}
+
+#menu1 .desc_menu:nth-child(3) {
+	animation-delay: 1500ms;
+}
+
+#menu1 .desc_menu:nth-child(4) {
+	animation-delay: 2000ms;
+}
+
+#menu2 .desc_menu:nth-child(2) {
+	animation-delay: 2500ms;
+}
+
+#menu2 .desc_menu:nth-child(3) {
+	animation-delay: 3000ms;
+}
+
+#menu2 .desc_menu:nth-child(4) {
+	animation-delay: 3500ms;
+}
+
+#menu3 .desc_menu:nth-child(2) {
+	animation-delay: 4000ms;
+}
+
+#menu3 .desc_menu:nth-child(3) {
+	animation-delay: 4500ms;
+}
+
+#menu3 .desc_menu:nth-child(4) {
+	animation-delay: 5000ms;
+}
+
+
+/* Bouton "Commander" */
+
+#commander {
+	display: flex;
+	align-items: center;
+
+	font-size: .8rem;
+
+	width: 50%;
+	height: 2rem;
+	padding: .3rem 1rem;
+	margin: .8rem auto 0 auto;
+
+	background-image: linear-gradient(-195deg, #FF79DA, #9356DC);
+	color: #fff;
+
+	border-radius: 25px;
+
+	transition: all 3000ms;
+}
+
+#commander:hover {
+	opacity: 0.8;
+	transition: all 3000ms;
+}
+
+/* FOOTER */
+
+footer {
+	background-color: #353535;
+
+	padding: 1.5rem 0 1rem 1rem;
+}
+
+footer h4 {
+	font-family: "Shrikhand", Arial, cursive;
+	margin: 0;
+
+	font-weight: 400;
+	color: white;
+}
+
+footer ul {
+	padding: 0;
+}
+
+.icon_footer {
+	width: 2rem;
+}
+
+footer li {
+	color: white;
+	margin-bottom: .2rem;
+}

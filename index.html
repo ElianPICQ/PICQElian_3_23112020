@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+
+<!-- Projet 3 OpenClasrooms -->
+<!-- Construction front-end d'un site (mobile first) de bouffe -->
+
+<!-- Page d'acceuil du site -->
+
+<html lang=fr>
+
+	<head>
+		<meta charset="utf-8" />
+		<link rel="stylesheet" href="css/all.css" />
+		<link rel="stylesheet" type="text/css" href="style.css" />
+
+		<title>OhMyFood</title>
+		<meta name="description" content="Découvrez des restaurants d'exception, sélectionnés par nos soins." />
+
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+	</head>
+
+	<body>
+
+		<header class="logo_header">																		<!-- Header (contenant Logo) -->
+			<div class="logo">
+				<h1>ohmyfood</h1>
+			</div>
+		</header>
+
+		<main>
+
+			<div id="localisation"><span id="loc_icon"><i class="fas fa-map-marker-alt"></i></span><span id="loc_text"> Paris, Belleville</span></div>
+
+			<header id="second_header">																	<!-- Header du corps de page (courte description + bouton nav) -->
+
+				<h2>Réservez le menu qui vous convient</h2>
+				<p>Découvrez des restaurants d'exception, sélectionnés par nos soins.</p>
+
+				<a href="#"><div id="explorer">Explorer nos restaurants</div></a>										<!-- Lien vers + de restaurants -->
+
+			</header>
+
+			<section id="manual">																	<!-- Section "mode d'emploi (?)" -->
+				<h4>Fonctionnement</h4>
+
+				<div><span class="nb">1</span><span class="manual_icon"><i class="fas fa-mobile-alt"></i></span><span class="manual_text">Choisissez un restaurant</span></div>
+				<div><span class="nb">2</span><span class="manual_icon"><i class="fas fa-list"></i></span><span class="manual_text">Composez votre menu</span></div>
+				<div><span class="nb">3</span><span class="manual_icon"><i class="fas fa-store"></i></span><span class="manual_text">Dégustez au restaurant</span></div>
+
+			</section>
+
+			<section id="section_restaurants">																	<!-- Section avec les restaurants affiliés -->
+
+				<h2>Restaurants</h2>
+
+				<article id="la_palette_du_gout">
+					<a href="la-palette-du-gout.html">
+						<div class="img_restau"><span class="new">Nouveau</span></div>
+						<div class="info_heart">
+							<div class="info_restau">
+								<h4>La palette du goût</h4>
+								<p>Ménilmontant</p>
+							</div>
+							<div class="purple_like"><i class="fas fa-heart"></i></div>
+						</div>
+					</a>
+				</article>
+
+				<article id="la_note_enchantee">
+					<div class="img_restau"><span class="new">Nouveau</span></div>
+					<div class="info_heart">
+						<div class="info_restau">
+							<h4>La note enchantée</h4>
+							<p>Charonne</p>
+						</div>
+						<div class="purple_like"><i class="far fa-heart"></i></div>
+					</div>
+				</article>
+
+				<article id="a_la_francaise">
+					<div class="img_restau"></div>
+					<div class="info_heart">
+						<div class="info_restau">
+							<h4>À la française</h4>
+							<p>Cité Rouge</p>
+						</div>
+						<div class="purple_like"><i class="far fa-heart"></i></div>
+					</div>
+				</article>
+
+				<article id="le_delice_des_sens">
+					<div class="img_restau"></div>
+					<div class="info_heart">
+						<div class="info_restau">
+							<h4>Le délice des sens</h4>
+							<p>Folie-Méricourt</p>
+						</div>
+						<div class="purple_like"><i class="far fa-heart"></i></div>
+					</div>
+				</article>
+
+			</section>
+		</main>
+
+			<footer>
+
+				<h4 class="logo">ohmyfood</h4>
+
+				<ul>
+					<li><span class="icon_footer"><i class="fas fa-utensils"></i></span>Proposer un restaurant</li>
+					<li><span class="icon_footer"><i class="fas fa-hands-helping"></i></span>Devenir partenaire</li>
+					<li>Mentions légales</li>
+					<li>Contact</li>
+				</ul>
+
+			</footer>
+	</body>
+</html>

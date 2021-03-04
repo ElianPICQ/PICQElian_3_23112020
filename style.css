@@ -1,0 +1,342 @@
+/* Feuille de Style CSS */
+/* OpenClassrooms projet 3 */
+/* Design mobile first */
+
+/* Menu principal */
+
+
+
+@font-face {
+	font-family: "Shrikhand";						/* Police logo + titres */
+	src: url(Shrikhand-Regular.ttf);
+}
+
+@font-face {
+	font-family: "Roboto";							/* Police textes */					
+	src: url(Roboto-Regular.ttf);
+}
+
+/* Comportements par défaut */
+
+body {
+	margin: 0;
+
+	font-family: "Roboto", Arial, sans-serif;
+}
+
+a:link {
+	text-decoration: none;
+	color: #000;
+}
+
+a {
+	color: #000;
+}
+
+li {
+	list-style-type: none;
+}
+
+/* Header principal (donc juste le logo) */
+
+.logo_header{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+	height: 3rem;
+
+	box-shadow: 0 2px 5px black;
+}
+
+.logo {
+	display: inline-block;
+}
+
+.logo h1 {
+	margin: 0;
+
+	font-family: "Shrikhand", Arial, sans-serif;
+	font-weight: 500;
+	font-size: 1.5rem;
+}
+
+/* Adresse affichée sous le logo */
+
+#localisation {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+	width: 100%;
+	height: 2rem;
+
+	font-size: .85rem;
+
+	background-color: #EAEAEA;
+}
+
+#loc_icon {
+	margin-right: .5rem;
+}
+
+#loc_text {
+	margin-left: .5rem;
+}
+
+/* Header du main */
+
+#second_header {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+
+	background-color: #F6F6F6;
+
+	padding: 2rem 10% 2rem 10%;
+}
+
+#second_header h2, #second_header p {
+	text-align: center;
+
+	margin: 0 0 1rem 0;
+}
+
+#second_header h2 {
+	font-size: 1.4rem;
+}
+
+#second_header p {
+	color: #646464;
+}
+
+/* Bouton rose "Explorer" */
+
+#explorer {
+	display: flex;
+	align-items: center;
+
+	font-size: .8rem;
+
+	height: 2rem;
+	padding: .3rem 1rem;
+	margin-top: .8rem;
+
+	background-image: linear-gradient(-195deg, #FF79DA, #9356DC);
+	color: #fff;
+
+	border-radius: 25px;
+
+	transition: opacity 3000ms;
+}
+
+#explorer:hover {
+	opacity: 0.8;
+	transition: opacity 3000ms;
+}
+
+/* Mode d'emploi "Fonctionnement" */
+
+#manual {
+	margin-bottom: 2rem;
+	padding-left: .35rem;
+}
+
+#manual h4 {
+	font-size: 1.5rem;
+	font-weight: bold;
+
+	margin-left: 5%;
+}
+
+#manual div {
+	display: flex;
+	align-items: center;
+
+	background-color: #F6F6F6;
+	border-radius: 20px;
+	box-shadow: 0px 2px 8px grey;
+
+	height: 3.5rem;
+	width: 90%;
+
+	margin: 0 auto 1rem auto;
+}
+
+#manual .nb {
+	display: inline-block;
+	text-align: center;
+
+	margin-left: -.7rem;
+	padding: .2rem;
+
+	width: 1rem;
+	height: 1rem;
+
+	color: white;
+	background-color: #9356DC;
+	border-radius: 50%;
+}
+
+.manual_icon {
+	color: #7E7E7E;
+	padding: 0 1.5rem 0 1.3rem;
+}
+
+.manual_text {
+	font-size: .85rem;
+	font-weight: 600;
+}
+
+#manual div:hover {						/* Animation "chngement de couleur" des blocs de "Fonctionnement" */
+	background-color: #F5EDFF;
+
+	transition: all 500ms ease-in-out;
+}
+
+#manual div:hover .manual_icon {							/* CHANGER LA COULEUR AU SURVOL /!\ NE FONCTIONNE PAS /!\ */
+	color: #9356DC;
+
+	transition: all 500ms ease-in-out;
+}
+
+/* Section sélection du restaurant */
+
+#section_restaurants {
+	background-color: #F6F6F6;
+
+	padding: 1.5rem 3% 2rem 3%;
+}
+
+#section_restaurants h2 {
+	font-size: 1.7rem;
+	font-weight: bold;
+
+	margin-left: 3%
+}
+
+#section_restaurants article {
+
+	background-color: white;
+
+	width: 95%;
+	margin: 0 auto 1rem auto;
+
+	border-radius: 25px;
+	box-shadow: 1px 2px 5px black;
+}
+
+.new {
+	margin: .8rem .8rem auto auto;
+	padding: .25rem .7rem;
+
+	font-size: .85rem;
+	color: #008766;
+	background-color: #99E2D0;
+	border-radius: 2px;
+}
+
+#section_restaurants article .img_restau {
+	display: flex;
+
+	height: 10rem;
+
+	background-size: cover;
+	background-position: bottom;
+
+	border-radius: 25px 25px 0 0;
+}
+
+#la_palette_du_gout .img_restau {
+	background-image: url(images/jay-wennington-N_Y88TWmGwA-unsplash.jpg);
+}
+
+#la_note_enchantee .img_restau {
+	background-image: url(images/stil-u2Lp8tXIcjw-unsplash.jpg)
+}
+
+#a_la_francaise .img_restau {
+	background-image: url(images/toa-heftiba-DQKerTsQwi0-unsplash.jpg);
+}
+
+#le_delice_des_sens .img_restau {
+	background-image: url(images/louis-hansel-shotsoflouis-qNBGVyOCY8Q-unsplash.jpg);
+}
+
+.info_heart {
+	display: flex;
+}
+
+.info_restau {
+	margin: .6rem auto .7rem .7rem;
+}
+
+.info_restau h4, .info_restau p {
+	margin: 0;
+}
+
+.info_restau h4 {
+	font-weight: 600
+}
+
+.info_restau p {
+	font-size: .95rem;
+}
+
+.purple_like {
+	margin: auto 1rem auto auto;
+}
+
+.purple_like i {
+	font-size: 1.3rem;
+}
+
+.fa-heart {
+	background-color: white;
+
+	background-clip: text;
+	-webkit-background-clip: text;
+
+	transition: background-color 2s;
+}
+
+.fa-heart:hover {							/* ANIMATION DU COEUR À FAIRE */
+	background-color: #9356DC;
+	color: transparent;
+
+	transition: background-color 2s;
+}
+
+/* FOOTER */
+
+footer {
+	background-color: #353535;
+
+	padding: 1.5rem 0 1rem 1rem;
+}
+
+footer h4 {
+	font-family: "Shrikhand", Arial, cursive;
+	margin: 0;
+
+	font-weight: 400;
+	color: white;
+}
+
+footer ul {
+	padding: 0;
+}
+
+.icon_footer {
+	display: inline-block;
+	width: 2rem;
+}
+
+.fa-hands-helping {
+	font-size: .8rem;
+}
+
+footer li {
+	color: white;
+	margin-bottom: .2rem;
+}
