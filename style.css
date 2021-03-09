@@ -112,6 +112,15 @@ li {
 
 /* Bouton rose "Explorer" */
 
+#link_explorer {
+	width: 65%;
+}
+
+#explorer span {
+	margin: auto;
+	text-align: center;
+}
+
 #explorer {
 	display: flex;
 	align-items: center;
@@ -119,7 +128,7 @@ li {
 	font-size: .8rem;
 
 	height: 2rem;
-	padding: .3rem 1rem;
+	padding: .3rem 0;
 	margin-top: .8rem;
 
 	background-image: linear-gradient(-195deg, #FF79DA, #9356DC);
@@ -143,7 +152,7 @@ li {
 }
 
 #manual h4 {
-	font-size: 1.5rem;
+	font-size: 1.3rem;
 	font-weight: bold;
 
 	margin-left: 5%;
@@ -173,6 +182,7 @@ li {
 	width: 1rem;
 	height: 1rem;
 
+	font-size: .9rem;
 	color: white;
 	background-color: #9356DC;
 	border-radius: 50%;
@@ -209,7 +219,6 @@ li {
 }
 
 #section_restaurants h2 {
-	font-size: 1.7rem;
 	font-weight: bold;
 
 	margin-left: 3%
@@ -276,15 +285,19 @@ li {
 }
 
 .info_restau h4 {
-	font-weight: 600
+	font-size: .95rem;
+	font-weight: 600;
+
+	margin-bottom: .1rem;
 }
 
 .info_restau p {
-	font-size: .95rem;
+	font-size: .90rem;
+	color: #333;
 }
 
 .purple_like {
-	margin: auto 1rem auto auto;
+	margin: auto 1.5rem auto auto;
 }
 
 .purple_like i {
@@ -337,6 +350,9 @@ footer ul {
 }
 
 footer li {
-	color: white;
 	margin-bottom: .2rem;
+}
+
+.footer_link {
+	color: white;
 }
