@@ -26,7 +26,6 @@ body {
 
 a:link {
 	text-decoration: none;
-	color: #000;
 }
 
 a {
@@ -35,6 +34,37 @@ a {
 
 li {
 	list-style-type: none;
+}
+
+/* Spinner (de chargement de page) */
+
+#spinner {
+	position: fixed;
+	height: 100vh;
+	width: 100vw;
+
+	background-color: #000;
+	opacity: .7;
+
+	animation-name: anim_spinner;
+	animation-duration: 3000ms;
+	animation-iteration-count: 1;
+	animation-fill-mode: forwards;
+}
+
+#spinner i {
+	width: 3rem;
+	height: 3rem;
+}
+
+@keyframes anim_spinner {
+	0% {
+		opacity: .7;
+	}
+
+	100% {
+		display: none;
+	}
 }
 
 /* Header principal (donc juste le logo) */
