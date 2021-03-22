@@ -416,3 +416,26 @@ footer li {
 .footer_link {
 	color: white;
 }
+
+@media screen and (min-width: 600px)
+{
+	body {
+		margin: 0 20% 0 20%;
+	}
+
+	.menu h3 {
+		margin-left: 15%;
+	}
+
+	.desc_menu {
+		width: 350px;
+	}
+
+	#commander {
+		width: 250px;
+	}
+
+	footer {
+		text-align: center;
+	}
+}

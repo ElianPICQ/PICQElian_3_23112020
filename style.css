@@ -39,12 +39,16 @@ li {
 /* Spinner (de chargement de page) */
 
 #spinner {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
 	position: fixed;
 	height: 100vh;
 	width: 100vw;
 
 	background-color: #000;
-	opacity: .7;
+	opacity: .8;
 
 	animation-name: anim_spinner;
 	animation-duration: 3000ms;
@@ -53,20 +57,19 @@ li {
 }
 
 #spinner i {
-	width: 3rem;
-	height: 3rem;
+	color: blue;
 }
-
+/*
 @keyframes anim_spinner {
-	0% {
-		opacity: .7;
+	from {
+		display: flex;
 	}
 
-	100% {
+	to {
 		display: none;
 	}
 }
-
+*/
 /* Header principal (donc juste le logo) */
 
 .logo_header{
@@ -234,7 +237,7 @@ li {
 	transition: all 500ms ease-in-out;
 }
 
-#manual div:hover .manual_icon {							/* CHANGER LA COULEUR AU SURVOL /!\ NE FONCTIONNE PAS /!\ */
+#manual div:hover .manual_icon {
 	color: #9356DC;
 
 	transition: all 500ms ease-in-out;
@@ -368,18 +371,6 @@ li {
 	transition-delay: 1s;
 }
 
-/*.purple-like:active .fas.fa-heart {
-	transform: scale(1);
-
-	transition: transform 1s ease-in-out;
-}
-
-.purple_like:active .far.fa-heart {
-	opacity: 0;
-	transition: opacity;
-	transition-delay: 1s;
-}*/
-
 /* FOOTER */
 
 footer {
@@ -415,4 +406,48 @@ footer li {
 
 .footer_link {
 	color: white;
+}
+
+
+
+/* Version Desktop */
+
+@media screen and (min-width: 600px)
+{
+	body {
+		margin: 0 20% 0 20%;
+	}
+
+	#link_explorer {
+		width: 250px;
+	}
+
+	#manual {
+		width: 615px;
+		margin: auto;
+	}
+
+	#manual div {
+		width: 400px;
+	}
+
+	#section_restaurants {
+		display: flex;
+		justify-content: flex-start;
+		flex-wrap: wrap;
+
+		margin-top: 3rem;
+	}
+
+	#section_restaurants h2 {
+		position: absolute;
+	}
+
+	#section_restaurants article {
+		width: 350px;
+	}
+
+	footer {
+		text-align: center;
+	}
 }
