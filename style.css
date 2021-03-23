@@ -20,6 +20,7 @@
 
 body {
 	margin: 0;
+	background-color: white;
 
 	font-family: "Roboto", Arial, sans-serif;
 }
@@ -38,7 +39,7 @@ li {
 
 /* Spinner (de chargement de page) */
 
-#spinner {
+/*#spinner {
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -47,8 +48,7 @@ li {
 	height: 100vh;
 	width: 100vw;
 
-	background-color: #000;
-	opacity: .8;
+	background-color: #000000BB;
 
 	animation-name: anim_spinner;
 	animation-duration: 3000ms;
@@ -56,20 +56,32 @@ li {
 	animation-fill-mode: forwards;
 }
 
+#spinner span {
+	padding: 10px;
+	background-color: #000;
+}
+
 #spinner i {
 	color: blue;
 }
-/*
+
 @keyframes anim_spinner {
-	from {
-		display: flex;
+	0% {
+		z-index: 10;
+		opacity: 1;
 	}
 
-	to {
-		display: none;
+	99% {
+		opacity: 0;
+		z-index: 10;
 	}
-}
-*/
+
+	100% {
+		opacity: 0;
+		z-index: -10;
+	}
+}*/
+
 /* Header principal (donc juste le logo) */
 
 .logo_header{
