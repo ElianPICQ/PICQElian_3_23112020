@@ -40,16 +40,17 @@ li {
   width: 100vw;
   background-color: #000000BB;
   animation-name: anim_spinner;
-  animation-duration: 3000ms;
+  animation-duration: 3s;
   animation-iteration-count: 1;
   animation-fill-mode: forwards;
 }
 #spinner span {
   padding: 10px;
-  background-color: #000;
+  border-radius: 15px;
+  background-color: #222;
 }
 #spinner i {
-  color: blue;
+  color: #9356DC;
 }
 
 @keyframes anim_spinner {
@@ -58,8 +59,8 @@ li {
     opacity: 1;
   }
   99% {
-    opacity: 0;
     z-index: 10;
+    opacity: 1;
   }
   100% {
     opacity: 0;
@@ -71,8 +72,10 @@ li {
   display: flex;
   justify-content: center;
   align-items: center;
+  position: relative;
+  /* Nécessaire pour l'ombre */
   height: 3rem;
-  box-shadow: 0 2px 5px black;
+  box-shadow: 0 1px 2px #9f9f9f;
 }
 
 .logo {
@@ -161,7 +164,7 @@ li {
   align-items: center;
   background-color: #F6F6F6;
   border-radius: 20px;
-  box-shadow: 0px 2px 8px grey;
+  box-shadow: 0px 2px 8px #9f9f9f;
   height: 3.5rem;
   width: 90%;
   margin: 0 auto 1rem auto;
@@ -209,7 +212,7 @@ li {
   width: 95%;
   margin: 0 auto 1rem auto;
   border-radius: 25px;
-  box-shadow: 1px 2px 5px black;
+  box-shadow: 1px 2px 5px #9f9f9f;
 }
 #section_restaurants article .img_restau {
   display: flex;
@@ -322,10 +325,23 @@ footer li .footer_link .icon_footer .fa-hands-helping {
 
 /* Version Desktop */
 @media screen and (min-width: 600px) {
-  body {
-    margin: 0 20% 0 20%;
+  /* Marges autour de la page (gauche/droite) */
+  .logo_header {
+    margin-left: 20%;
+    margin-right: 20%;
   }
 
+  main {
+    margin-left: 20%;
+    margin-right: 20%;
+  }
+
+  footer {
+    margin-left: 20%;
+    margin-right: 20%;
+  }
+
+  /* Taille max des boutons "Explorer..." et "Fonctionnement" */
   #link_explorer {
     width: 250px;
   }
@@ -339,21 +355,24 @@ footer li .footer_link .icon_footer .fa-hands-helping {
     width: 400px;
   }
 
+  /* Mise en page section "Restaurants" */
   #section_restaurants {
     display: flex;
-    justify-content: flex-start;
-    flex-wrap: wrap;
+    flex-direction: column;
     margin-top: 3rem;
   }
 
-  #section_restaurants h2 {
-    position: absolute;
+  #restaurants {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
   }
 
   #section_restaurants article {
     width: 350px;
   }
 
+  /* Mise en page footer */
   footer {
     text-align: center;
   }

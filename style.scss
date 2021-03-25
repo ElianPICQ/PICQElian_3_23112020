@@ -14,6 +14,12 @@
 	src: url(Roboto-Regular.ttf);
 }
 
+$primaire: #9356DC;
+$secondaire: #FF79DA;
+$tertiaire: #99E2D0;
+$lightgreyshadow: #9f9f9f;
+$lightgreybackground: #F6F6F6;
+
 /* Comportements par défaut */
 
 body {
@@ -48,17 +54,18 @@ li {
 	background-color: #000000BB;
 
 	animation-name: anim_spinner;
-	animation-duration: 3000ms;
+	animation-duration: 3s;
 	animation-iteration-count: 1;
 	animation-fill-mode: forwards;
 
 	span {
 		padding: 10px;
-		background-color: #000;
+		border-radius: 15px;
+		background-color: #222;
 	}
 
 	i {
-		color: blue;
+		color: $primaire;
 	}
 }
 
@@ -69,8 +76,8 @@ li {
 	}
 
 	99% {
-		opacity: 0;
 		z-index: 10;
+		opacity: 1;
 	}
 
 	100% {
@@ -86,9 +93,11 @@ li {
 	justify-content: center;
 	align-items: center;
 
+	position: relative;					/* Nécessaire pour l'ombre */
+
 	height: 3rem;
 
-	box-shadow: 0 2px 5px black;
+	box-shadow: 0 1px 2px $lightgreyshadow;
 }
 
 .logo {
@@ -133,7 +142,7 @@ li {
 	flex-direction: column;
 	align-items: center;
 
-	background-color: #F6F6F6;
+	background-color: $lightgreybackground;
 
 	padding: 2rem 10% 2rem 10%;
 		
@@ -167,7 +176,7 @@ li {
 		padding: .3rem 0;
 		margin-top: .8rem;
 
-		background-image: linear-gradient(-195deg, #FF79DA, #9356DC);
+		background-image: linear-gradient(-195deg, $secondaire, $primaire);
 		color: #fff;
 
 		border-radius: 25px;
@@ -203,9 +212,9 @@ li {
 			display: flex;
 			align-items: center;
 
-			background-color: #F6F6F6;
+			background-color: $lightgreybackground;
 			border-radius: 20px;
-			box-shadow: 0px 2px 8px grey;
+			box-shadow: 0px 2px 8px $lightgreyshadow;
 
 			height: 3.5rem;
 			width: 90%;
@@ -237,7 +246,7 @@ li {
 
 			font-size: .9rem;
 			color: white;
-			background-color: #9356DC;
+			background-color: $primaire;
 			border-radius: 50%;
 		}
 
@@ -255,7 +264,7 @@ li {
 /* Section sélection du restaurant */
 
 #section_restaurants {
-	background-color: #F6F6F6;
+	background-color: $lightgreybackground;
 
 	padding: 1.5rem 3% 2rem 3%;
 
@@ -272,7 +281,7 @@ li {
 		margin: 0 auto 1rem auto;
 
 		border-radius: 25px;
-		box-shadow: 1px 2px 5px black;
+		box-shadow: 1px 2px 5px $lightgreyshadow;
 
 		.img_restau {
 			display: flex;
@@ -290,7 +299,7 @@ li {
 
 				font-size: .85rem;
 				color: #008766;
-				background-color: #99E2D0;
+				background-color: $tertiaire;
 				border-radius: 2px;
 			}
 		}
@@ -334,7 +343,7 @@ li {
 
 					color: transparent;
 
-					background-image: linear-gradient(-195deg, #FF79DA, #9356DC);
+					background-image: linear-gradient(-195deg, $secondaire, $primaire);
 					background-clip: text;
 					-webkit-background-clip: text;
 
@@ -429,9 +438,25 @@ footer {
 
 @media screen and (min-width: 600px)
 {
-	body {
-		margin: 0 20% 0 20%;
+
+	/* Marges autour de la page (gauche/droite) */
+
+	.logo_header {
+		margin-left: 20%;
+		margin-right: 20%;
 	}
+
+	main {
+		margin-left: 20%;
+		margin-right: 20%;
+	}
+
+	footer {
+		margin-left: 20%;
+		margin-right: 20%;
+	}
+
+	/* Taille max des boutons "Explorer..." et "Fonctionnement" */
 
 	#link_explorer {
 		width: 250px;
@@ -446,21 +471,26 @@ footer {
 		width: 400px;
 	}
 
+	/* Mise en page section "Restaurants" */
+
 	#section_restaurants {
 		display: flex;
-		justify-content: flex-start;
-		flex-wrap: wrap;
+		flex-direction: column;
 
 		margin-top: 3rem;
 	}
 
-	#section_restaurants h2 {
-		position: absolute;
+	#restaurants {
+		display: flex;
+		flex-direction: row;
+		flex-wrap: wrap;
 	}
 
 	#section_restaurants article {
 		width: 350px;
 	}
+
+	/* Mise en page footer */
 
 	footer {
 		text-align: center;
