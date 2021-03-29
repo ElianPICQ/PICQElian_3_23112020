@@ -1,0 +1,501 @@
+/* Feuille de Style SCSS */
+/* OpenClassrooms projet 3 */
+/* Design mobile first */
+
+/* Definitions principales */
+
+@font-face {
+	font-family: "Shrikhand";						/* Police logo + titres */
+	src: url(Shrikhand-Regular.ttf);
+}
+
+@font-face {
+	font-family: "Roboto";							/* Police textes */					
+	src: url(Roboto-Regular.ttf);
+}
+
+$primaire: #9356DC;
+$secondaire: #FF79DA;
+$tertiaire: #99E2D0;
+$lightgreyshadow: #9f9f9f;
+$lightgreybackground: #F6F6F6;
+
+/* Comportements par défaut */
+
+body {
+	margin: 0;
+
+	font-family: "Roboto", Arial, sans-serif;
+}
+
+a {
+	color: #000;
+
+	&:link {
+	text-decoration: none;
+}
+}
+
+li {
+	list-style-type: none;
+}
+
+/* Spinner (de chargement de page) */
+
+#spinner {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+	position: fixed;
+	height: 100vh;
+	width: 100vw;
+
+	background-color: #000000BB;
+
+	animation-name: anim_spinner;
+	animation-duration: 3s;
+	animation-iteration-count: 1;
+	animation-fill-mode: forwards;
+
+	span {
+		padding: 10px;
+		border-radius: 15px;
+		background-color: #222;
+	}
+
+	i {
+		color: $primaire;
+	}
+}
+
+@keyframes anim_spinner {
+	0% {
+		z-index: 10;
+		opacity: 1;
+	}
+
+	99% {
+		z-index: 10;
+		opacity: 1;
+	}
+
+	100% {
+		opacity: 0;
+		z-index: -10;
+	}
+}
+
+#main_header {
+	display: flex;
+	align-items: center;
+
+	height: 3rem;
+
+	.back_button {
+		position: absolute;
+		margin-left: 1.5rem;
+	}
+
+	#logo {
+		margin: 0 auto;
+
+		font-family: "Shrikhand", cursive, sans-serif;
+		font-size: .9rem;
+	}
+}
+
+/* Image d'entête */
+
+#img_header {
+	background-size: cover;
+	height: 12rem;
+	width: 100%;
+
+	z-index: -5;
+	position: relative;
+}
+
+/* Main contenant tous les menus */
+
+main {
+	background-color: $lightgreybackground;
+	border-radius: 25px 25px 0 0;
+
+	margin-top: -1.5rem;
+	padding-bottom: 4rem;
+}
+
+/* Header du menu */
+
+#menu_header {
+	display: flex;
+	justify-content: space-around;
+	text-align: center;
+
+	h2 {
+		font-family: "Shrikhand", cursive, sans-serif;
+		font-weight: 400;
+		font-size: 1.4rem;
+	}
+
+	#like {
+		display: flex;
+		align-items: center;
+
+		i {
+			font-size: 1.5rem;
+		}
+
+		.fas.fa-heart {
+			margin-left: -1.5rem;
+
+			color: transparent;
+
+			background-image: linear-gradient(-195deg, $secondaire, $primaire);
+			background-clip: text;
+			-webkit-background-clip: text;
+
+			transform: scale(0);
+			transition: transform 1s ease-in-out;
+		}
+
+		.far.fa-heart {
+			opacity: 1;
+			transition: opacity;
+		}
+
+		&:hover .fas.fa-heart {
+			transform: scale(1);
+
+			transition: transform 1s ease-in-out;
+		}
+
+		&:hover .far.fa-heart {
+			opacity: 0;
+			transition: opacity;
+			transition-delay: 1s;
+		}
+	}
+}
+
+/* Menus des restaurants */
+
+.menu {
+	margin-bottom: 2.5rem;
+
+	h3 {
+		font-size: 1rem;
+		font-weight: 100;
+		color: #4B4B4B;					/* Gris foncé */
+
+		margin-left: 5%;
+		margin-top: .5rem;
+		padding-bottom: .2rem;
+
+		width: 2.5rem;
+		overflow: visible;
+		border-bottom: 2px solid $tertiaire;
+	}
+
+	.desc_menu {
+		display: flex;
+		flex-direction: row;
+
+		overflow: hidden;
+
+		height: 3rem;
+		width: 90%;
+		margin: 0 auto .8rem auto;
+
+		border-radius: 10px;
+		box-shadow: 0px 2px 8px $lightgreyshadow;
+
+		animation-name: anim_menu;
+		animation-duration: 1000ms;
+		animation-iteration-count: 1;
+
+		transform: translateY(10px);
+		opacity: 0;
+
+		animation-fill-mode: forwards;
+
+		h4 {
+			margin: 0;
+			font-size: .95rem;
+
+			white-space: nowrap;
+			overflow: hidden;
+			text-overflow: ellipsis;
+		}
+
+		p {
+			margin: 0;
+			font-size: .75rem;
+			color: #4d4d4d;
+
+			white-space: nowrap;
+			overflow: hidden;
+			text-overflow: ellipsis;
+		}
+
+		h4, p {
+			margin-left: .5rem;
+		}
+
+		.plat {
+			padding: .5rem 0;
+
+			min-width: 80%;
+			transition: min-width 1000ms;
+		}
+
+		.prix {
+			padding-bottom: .4rem;
+			margin-top: auto;
+
+			font-weight: 600;
+			color: #454545;
+			text-align: center;
+
+			min-width: 20%;
+
+			transform: translateX(0%);
+			transition: min-width 1000ms;
+		}
+
+		.carre_coche {
+			display: flex;
+			align-items: center;
+
+			min-width: 20%;
+			height: 100%;
+
+			background-color: $tertiaire;
+
+			.coche {
+				color: white;
+				margin: auto;
+
+				transform: rotate(0deg);
+				transition: transform 1s 500ms;
+			}
+		}
+
+		&:hover .plat {
+			min-width: 60%;
+			transition: min-width 1s;
+		}
+
+		&:hover .coche {
+			transform: rotate(360deg);
+			transition: transform 1s;
+		}
+	}
+}
+
+/* Animation au chargement de la page */
+
+@keyframes anim_menu {
+	0% {
+		transform: translateY(10px);
+		opacity: 0;
+	}
+
+	100% {
+		transform: translateY(0);
+		opacity: 1;
+	}
+}
+
+#menu1 {
+	.desc_menu {
+		&:nth-child(2) {
+			animation-delay: 300ms;
+		}
+
+		&:nth-child(3) {
+			animation-delay: 700ms;
+		}
+
+		&:nth-child(4) {
+			animation-delay: 1100ms;
+		}
+	}
+}
+
+#menu2 {
+	.desc_menu {
+		&:nth-child(2) {
+			animation-delay: 1500ms;
+		}
+
+		&:nth-child(3) {
+			animation-delay: 1900ms;
+		}
+
+		&:nth-child(4) {
+			animation-delay: 2300ms;
+		}
+	}
+}
+
+#menu3 {
+	.desc_menu {
+		&:nth-child(2) {
+			animation-delay: 2700ms;
+		}
+
+		&:nth-child(3) {
+			animation-delay: 3100ms;
+		}
+
+		&:nth-child(4) {
+			animation-delay: 3500ms;
+		}
+	}
+}
+
+/* Keyframe spéciale pour "La note enchantée" (qui a 1 plat en plus) */
+
+#menu1_spe {
+	.desc_menu {
+		&:nth-child(2) {
+			animation-delay: 300ms;
+		}
+
+		&:nth-child(3) {
+			animation-delay: 700ms;
+		}
+
+		&:nth-child(4) {
+			animation-delay: 1100ms;
+		}
+
+		&:nth-child(5) {
+			animation-delay: 1500ms;
+		}
+	}
+}
+
+#menu2_spe {
+	.desc_menu {
+		&:nth-child(2) {
+			animation-delay: 1900ms;
+		}
+
+		&:nth-child(3) {
+			animation-delay: 2300ms;
+		}
+
+		&:nth-child(4) {
+			animation-delay: 2700ms;
+		}
+	}
+}
+
+#menu3_spe {
+	.desc_menu {
+		&:nth-child(2) {
+			animation-delay: 3100ms;
+		}
+
+		&:nth-child(3) {
+			animation-delay: 3500ms;
+		}
+
+		&:nth-child(4) {
+			animation-delay: 3900ms;
+		}
+	}
+}
+
+/* Bouton "Commander" */
+
+#commander {
+	display: flex;
+	align-items: center;
+
+	font-size: .95rem;
+
+	width: 45%;
+	height: 2rem;
+	padding: .3rem 1rem;
+	margin: .8rem auto 0 auto;
+
+	background-image: linear-gradient(-195deg, $secondaire, $primaire);
+	color: #fff;
+
+	border-radius: 25px;
+
+	transition: all 3000ms;
+
+	span {
+		margin: auto;
+	}
+
+	&:hover {
+		opacity: 0.8;
+		transition: all 3000ms;
+	}
+}
+
+/* FOOTER */
+
+footer {
+	background-color: #353535;
+
+	padding: 1.5rem 0 1rem 1rem;
+
+	h4 {
+		font-family: "Shrikhand", Arial, cursive;
+		margin: 0;
+
+		font-weight: 400;
+		color: white;
+	}
+
+	ul {
+		padding: 0;
+
+		li {
+			margin-bottom: .2rem;
+
+			.footer_link {
+				color: white;
+
+				.icon_footer {
+					display: inline-block;
+					width: 2rem;
+
+					.fa-hands-helping {
+						font-size: .8rem;
+					}
+				}
+			}
+		}
+	}
+}
+
+@media screen and (min-width: 600px)
+{
+	body {
+		margin: 0 20% 0 20%;
+	}
+
+	.menu h3 {
+		margin-left: 15%;
+	}
+
+	.desc_menu {
+		width: 350px;
+	}
+
+	#commander {
+		width: 250px;
+	}
+
+	footer {
+		text-align: center;
+	}
+}
