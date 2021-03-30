@@ -40,52 +40,6 @@ li {
 	list-style-type: none;
 }
 
-/* Spinner (de chargement de page) */
-
-#spinner {
-	display: flex;
-	justify-content: center;
-	align-items: center;
-
-	position: fixed;
-	height: 100vh;
-	width: 100vw;
-
-	background-color: #000000BB;
-
-	animation-name: anim_spinner;
-	animation-duration: 3s;
-	animation-iteration-count: 1;
-	animation-fill-mode: forwards;
-
-	span {
-		padding: 10px;
-		border-radius: 15px;
-		background-color: #222;
-	}
-
-	i {
-		color: $primaire;
-	}
-}
-
-@keyframes anim_spinner {
-	0% {
-		z-index: 10;
-		opacity: 1;
-	}
-
-	99% {
-		z-index: 10;
-		opacity: 1;
-	}
-
-	100% {
-		opacity: 0;
-		z-index: -10;
-	}
-}
-
 #main_header {
 	display: flex;
 	align-items: center;
