@@ -1,9 +1,9 @@
 # PICQElian_3_23112020
 
  Formation OpenClassrooms Développeur Web - Projet 3 -
- https://openclassrooms.com/fr/paths/185/projects/637/assignment
+Réaliser un site web à partir d'un cahier des charges et d'une maquette
 
-Code uniquement en HTML et CSS.
+Code uniquement en HTML et CSS/SCSS.
 Pas de framework.
 
 Design responsif Mobile First
